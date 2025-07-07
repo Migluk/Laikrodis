@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.clock-digital {
+  text-align: center;
+}
+.date {
+  font-family: sans-serif;
+  font-size: 2rem;
+}
+.time {
+  font-family: monospace;
+  font-size: 4rem;
+}
+
+.clock-analog {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 100px;
+  position: relative;
+  border: 5px solid #fff;
+  box-shadow: inset 0 2px 3px 2px #444, 0 2px 3px 0px #000;
+  overflow: hidden;
+}
+.clock-analog > * {
+  transform-origin: bottom;
+  border-radius: 0 0 4px 4px;
+  position: absolute;
+}
+.clock-analog > div[class^="h-"] {
+  color: #fff;
+  font-size: 1.8rem;
+  font-family: sans-serif;
+  text-shadow: 0 2px 2px #333;
+}
+.h-12 {
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.h-3 {
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+}
+.h-6 {
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.h-9 {
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+}
+
+.hours {
+  background-color: #ea94d4;
+  width: 6px;
+  height: 65px;
+  position: absolute;
+  top: calc(50% - 65px);
+  left: calc(50% - 3px);
+}
+.minutes {
+  background-color: #dfe889;
+  width: 4px;
+  height: 75px;
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 2px);
+}
+.seconds {
+  background-color: rgb(126, 190, 229);
+  width: 2px;
+  height: 85px;
+  position: absolute;
+  top: calc(50% - 85px);
+  left: calc(50% - 1px);
+}
+
+/* Pomodoro */
+.pomodoro {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.slider {
+  background-color: #fff;
+  padding: 3px;
+  border-radius: 11px;
+  width: 51px;
+  transition: all 200ms;
+}
+.dot {
+  background-color: rgb(227, 131, 242);
+  width: 15px;
+  height: 15px;
+  border-radius: 8px;
+  transition: all 200ms;
+}
+.label {
+  font-family: sans-serif;
+}
+.active {
+  background-color: rgb(205, 143, 238);
+}
+.active .dot {
+  background-color: #fff;
+  transform: translateX(30px);
+}
+.work {
+  color: rgb(153, 88, 234);
+}
+.chill {
+  color: seagreen;
+}
+
+.pomo-bg {
+  width: 95px;
+  height: 95px;
+  position: relative;
+  transform-origin: bottom right;
+  transform: rotate(90deg);
+  display: none;
+}
+.pomo-bg > div {
+  width: 95px;
+  height: 95px;
+  background-color: rgb(60, 61, 61);
+  position: absolute;
+}
+div.bg2 {
+  transform-origin: bottom right;
+  transform: rotate(60deg);
+}
+
+.show {
+  display: block;
+}
