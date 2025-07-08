@@ -82,8 +82,6 @@ function shadow(s) {
 }
 
 clock();
-
-// Pomodoro funkcija
 let isPomodoro = false;
 
 sliderEl.addEventListener("click", () => {
@@ -98,13 +96,13 @@ function chill() {
   timeEl.classList.remove("work");
   timeEl.classList.add("chill");
   show(true);
-  isPomodoro ? setTimeout(work, 5 * 60 * 1000) : stop(); // 60
+  isPomodoro ? setTimeout(work, 5 * 60 * 1000) : stop();
 }
 
 function work() {
   timeEl.classList.remove("chill");
   timeEl.classList.add("work");
-  isPomodoro ? setTimeout(chill, 25 * 60 * 1000) : stop(); // 60
+  isPomodoro ? setTimeout(chill, 25 * 60 * 1000) : stop();
 }
 
 function stop() {
@@ -115,7 +113,7 @@ function stop() {
 
 function show(afterFive) {
   const now = new Date();
-  let min = now.getMinutes(); // getMinutes
+  let min = now.getMinutes();
   afterFive ? (min += 5) : min;
   min > 59 ? (min -= 60) : min;
   const deg = min * 6 + 90;

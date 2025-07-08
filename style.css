@@ -94,7 +94,6 @@ body {
   left: calc(50% - 1px);
 }
 
-/* Pomodoro */
 .pomodoro {
   display: flex;
   align-items: center;
